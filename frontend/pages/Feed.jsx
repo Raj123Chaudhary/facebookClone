@@ -104,7 +104,7 @@
 // };
 
 // export default Feed;
-
+import { backendurl } from "../services/apis";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -116,14 +116,11 @@ const Feed = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await axios.get(
-        "http://localhost:3000/api/v1/posts/getAllPosts",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+      const res = await axios.get(backendurl + "/api/v1/posts/getAllPosts", {
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-      );
+      });
 
       console.log(res.data);
 

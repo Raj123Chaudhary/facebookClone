@@ -86,8 +86,8 @@ export const login = async (req, res) => {
     });
     const options = {
       httpOnly: true, // can't access from JS (security)
-      secure: false, // true in production (HTTPS)
-      sameSite: "strict",
+      secure: true, // true in production (HTTPS)
+      sameSite: "none",
       maxAge: 2 * 60 * 60 * 1000, // 2 hours
     };
     return res.cookie("token", token, options).status(200).json({

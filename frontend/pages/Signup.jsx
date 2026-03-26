@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { backendurl } from "../services/apis";
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
@@ -243,7 +244,7 @@ const Signup = () => {
     //     console.log("Signup Data:", formData);
     try {
       const data = await axios.post(
-        "http://localhost:3000/api/v1/users/signUp",
+        backendurl + "/api/v1/users/signUp",
         formData,
       );
       navigate("/login");
