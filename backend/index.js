@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // ✅ your frontend
+    origin: ["http://localhost:5173", "https://facebook-clone-echu.vercel.app"], // ✅ your frontend
     credentials: true, // ✅ allow cookies
   }),
 );
